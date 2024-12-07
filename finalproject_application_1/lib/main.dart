@@ -16,9 +16,10 @@ class MainApp extends StatelessWidget {
   }
 }
 
-// Humza, the class contain the homescreen
+// Humza Sheikh, the class contain the homescreen
 // homescreen will display the menu with a image, title,
 // and 3 buttons, start, leaderboard, exit
+// which required to make the main to work and access to start, leaderboard, exit functions
 class HomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
