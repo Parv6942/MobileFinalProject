@@ -1,6 +1,8 @@
 import 'package:finalproject_application_1/page/player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:finalproject_application_1/page/leaderboard.dart';
+
 
 void main() {
   runApp(MainApp());
@@ -67,22 +69,39 @@ class HomeScreen extends StatelessWidget{
               return Player();
              })
              );
-            }, child: Text("Start")),
+            }, child: Text("Start")
+            ),
             SizedBox(height: 10),
-            FilledButton(onPressed: (){
-
-            }, child: Text("Leaderboard")),
-             SizedBox(height: 10),
-             FilledButton(onPressed: (){
-              SystemNavigator.pop(); // will exit, only works if you run on a phone emluator not chrome
-             }, child: Text("Exit"))
-
+            FilledButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return Player(
+                        onPlayersSet: (String player1Name, String player2Name) {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return Leaderboard(
+                              playerOneName: player1Name,
+                              playerTwoName: player2Name,
+                            );
+                          }));
+                        },
+                      );
+                    }));
+                  },
+                  child: Text("Leaderboard"),
+                ),
+                SizedBox(height: 10),
+                FilledButton(
+                  onPressed: () {
+                    SystemNavigator.pop();
+                  },
+                  child: Text("Exit"),
+                )
+              ],
+            )
           ],
-        )
-
-      ],
-    ),
-    ),
+        ),
+      ),
     );
   }
 }

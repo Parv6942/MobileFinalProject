@@ -25,6 +25,11 @@ import 'package:flutter/services.dart';
 // contains Player class that defines the player widget as a statefulwidget,
 //  it is required to maintain the state when player widget is changing 
 class Player extends StatefulWidget {
+  final Function(String player1Name, String player2Name)? onPlayersSet;
+
+  // Updated to include optional callback
+  Player({this.onPlayersSet});
+
 @override 
 _PlayerState createState() => _PlayerState();
 
