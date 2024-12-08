@@ -1,5 +1,4 @@
 // Import to detect if the application is running on the web platform
-import 'package:finalproject_application_1/page/game.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 // Import to use Flutter's core framework and material design widgets
@@ -147,12 +146,12 @@ children: [
   Text("No image selected.") : 
   // KIsWeb is Display image for web
   (kIsWeb ? Image.memory(_imageBytes1!,  // Image bytes for player 1
-  width: 200,  // Set width of the image
-  height:  200,)  // Set height of the image 
+  width: 300,  // Set width of the image
+  height:  300,)  // Set height of the image 
   // Display image for mobile 
   : Image.file(File(_imageFile1!.path), // Image file for player 1
-     width: 200, // Set width of the image
-     height: 200, // Set height of the  image
+     width: 300, // Set width of the image
+     height: 300, // Set height of the  image
      )), 
   SizedBox(height: 5),  // add some space
 
@@ -187,12 +186,12 @@ children: [
   // KIsWeb is Display image for web
   (kIsWeb ?
    Image.memory(_imageBytes2!, // Image bytes for player 2
-   width: 200, // Set width of the image
-   height: 200,) // Set height of the image
+   width: 300, // Set width of the image
+   height: 300,) // Set height of the image
   // Display image for mobile
    : Image.file(File(_imageFile2!.path),
-      height: 200,  // Set height of the image
-      width: 200,)  // Set width of the image
+      height: 300,  // Set height of the image
+      width: 300,)  // Set width of the image
    ),
     SizedBox( height: 5), // add some space 
 
@@ -215,6 +214,7 @@ children: [
     ),
   ),
 ), // connect the textfield to the playertwoController
+<<<<<<< HEAD
 
 FilledButton(
   onPressed: () {
@@ -243,6 +243,8 @@ FilledButton(
   },
   child: Text("Start Game"),
 ),
+=======
+>>>>>>> parent of 95bd459 (Merge branch 'parv' into Will)
 ],
   ),
 ),
