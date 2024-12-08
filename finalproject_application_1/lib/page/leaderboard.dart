@@ -17,6 +17,7 @@ class Leaderboard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Player 1: $playerOneName"),
+            Text("WIN?LOSE?TIE"),
             Text("Player 2: $playerTwoName"),
           ],
         ),
