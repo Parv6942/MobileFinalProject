@@ -73,21 +73,11 @@ class HomeScreen extends StatelessWidget{
             ),
             SizedBox(height: 10),
             FilledButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return Player(
-                        onPlayersSet: (String player1Name, String player2Name) {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return Leaderboard(
-                              playerOneName: player1Name,
-                              playerTwoName: player2Name,
-                            );
-                          }));
-                        },
-                      );
-                    }));
-                  },
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Leaderboard(); // Navigate to the leaderboard
+                }));
+               },
                   child: Text("Leaderboard"),
                 ),
                 SizedBox(height: 10),
