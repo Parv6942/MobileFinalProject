@@ -224,6 +224,12 @@ FilledButton(
       );
       return;
     }
+     if (widget.onPlayersSet != null) {
+      widget.onPlayersSet!(
+        playerOneController.text,
+        playerTwoController.text,
+      );
+    }
 
    Navigator.push(
      context,
