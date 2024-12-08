@@ -1,4 +1,5 @@
 // Import to detect if the application is running on the web platform
+import 'package:finalproject_application_1/page/game.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 // Import to use Flutter's core framework and material design widgets
@@ -24,11 +25,6 @@ import 'package:flutter/services.dart';
 // contains Player class that defines the player widget as a statefulwidget,
 //  it is required to maintain the state when player widget is changing 
 class Player extends StatefulWidget {
-  final Function(String player1Name, String player2Name)? onPlayersSet;
-
-  // Updated to include optional callback
-  Player({this.onPlayersSet});
-
 @override 
 _PlayerState createState() => _PlayerState();
 
@@ -146,12 +142,12 @@ children: [
   Text("No image selected.") : 
   // KIsWeb is Display image for web
   (kIsWeb ? Image.memory(_imageBytes1!,  // Image bytes for player 1
-  width: 300,  // Set width of the image
-  height:  300,)  // Set height of the image 
+  width: 200,  // Set width of the image
+  height:  200,)  // Set height of the image 
   // Display image for mobile 
   : Image.file(File(_imageFile1!.path), // Image file for player 1
-     width: 300, // Set width of the image
-     height: 300, // Set height of the  image
+     width: 200, // Set width of the image
+     height: 200, // Set height of the  image
      )), 
   SizedBox(height: 5),  // add some space
 
@@ -186,12 +182,12 @@ children: [
   // KIsWeb is Display image for web
   (kIsWeb ?
    Image.memory(_imageBytes2!, // Image bytes for player 2
-   width: 300, // Set width of the image
-   height: 300,) // Set height of the image
+   width: 200, // Set width of the image
+   height: 200,) // Set height of the image
   // Display image for mobile
    : Image.file(File(_imageFile2!.path),
-      height: 300,  // Set height of the image
-      width: 300,)  // Set width of the image
+      height: 200,  // Set height of the image
+      width: 200,)  // Set width of the image
    ),
     SizedBox( height: 5), // add some space 
 
@@ -214,8 +210,6 @@ children: [
     ),
   ),
 ), // connect the textfield to the playertwoController
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 FilledButton(
   onPressed: () {
@@ -224,12 +218,6 @@ FilledButton(
         SnackBar(content: Text("Please enter both player names!")),
       );
       return;
-    }
-     if (widget.onPlayersSet != null) {
-      widget.onPlayersSet!(
-        playerOneController.text,
-        playerTwoController.text,
-      );
     }
 
    Navigator.push(
@@ -244,10 +232,6 @@ FilledButton(
   },
   child: Text("Start Game"),
 ),
-=======
->>>>>>> parent of 95bd459 (Merge branch 'parv' into Will)
-=======
->>>>>>> parent of 718ab08 (My stuff)
 ],
   ),
 ),
