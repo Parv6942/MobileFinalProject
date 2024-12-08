@@ -215,6 +215,7 @@ children: [
   ),
 ), // connect the textfield to the playertwoController
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 FilledButton(
   onPressed: () {
@@ -245,6 +246,8 @@ FilledButton(
 ),
 =======
 >>>>>>> parent of 95bd459 (Merge branch 'parv' into Will)
+=======
+>>>>>>> parent of 718ab08 (My stuff)
 ],
   ),
 ),
