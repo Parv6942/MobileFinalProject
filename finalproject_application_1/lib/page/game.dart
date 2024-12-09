@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'result.dart';
 
+
+//Parv, Game screen class which starts after the text boxes in player.dart are filled in 
 class GameScreen extends StatefulWidget {
   final String player1Name;
   final String player2Name;
@@ -12,19 +14,25 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
+  //Parv, player choices wait here
   String? player1Choice;
   String? player2Choice;
 
+
+  //Parv, submit button function
+  // it looks for if both players have made their choices and if they did then go on to the result screen.
   void submitChoices() {
+    // this "if" statement determines if they have answered or not
     if (player1Choice == null || player2Choice == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Both players must select a choice!')),
       );
       return;
     }
-
+      //Parv, this string is responsible for holding on to the winner name.
     String winner = Winner(player1Choice!, player2Choice!);
 
+     // navigates to the result screen and gives all the juicy details as well 
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -38,7 +46,8 @@ class _GameScreenState extends State<GameScreen> {
   }
 
 
-  //winner decider
+  //winner logic, this determines how the players will win, if both players pick the same choice then it will be a draw, player 1 has 3 possible winnings,
+  // if neither of them trigger then player 2 wins
   String Winner(String p1, String p2) {
     if (p1 == p2) return "It's a Tie!";
     if ((p1 == "Rock" && p2 == "Scissors") ||
@@ -60,7 +69,7 @@ class _GameScreenState extends State<GameScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // P1
+            // P1 stuff
             Column(
               children: [
                 Text(
@@ -69,6 +78,8 @@ class _GameScreenState extends State<GameScreen> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+
+                  // the rock paper scissors buttons
                   children: ["Rock", "Paper", "Scissors"]
                       .map((choice) => Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -86,7 +97,7 @@ class _GameScreenState extends State<GameScreen> {
               ],
             ),
 
-            // submit 
+            // submit button
             ElevatedButton(
               onPressed: submitChoices,
               child: Text("Submit"),
@@ -95,11 +106,12 @@ class _GameScreenState extends State<GameScreen> {
               ),
             ),
 
-            // P2
+            // P2 stuff
              Divider(height: 40),
             Text("${widget.player2Name} Turn"),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              // the rock paper scissors buttons again
               children: ["Rock", "Paper", "Scissors"]
                   .map((choice) => Padding(
                         padding: const EdgeInsets.all(8.0),
