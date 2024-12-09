@@ -45,7 +45,7 @@
   final TextEditingController playerOneController = TextEditingController();
   final TextEditingController playerTwoController = TextEditingController();
   
-  //global is needed so the list doesn't reset everytime Will
+  //updates the list so the list doesn't reset everytime Will
   void updateGameResults(String player1Name, String player2Name, String winner) {
     setState(() {
       globals.gameResults.add({

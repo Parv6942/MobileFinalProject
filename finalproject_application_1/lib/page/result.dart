@@ -39,7 +39,7 @@ class ResultScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Wills leaderboard button
-                // Update the leaderboard data and navigate to the leaderboard
+                // Update the leaderboards
                 globals.gameResults.add({
                   'player1': player1Name,
                   'player2': player2Name,
