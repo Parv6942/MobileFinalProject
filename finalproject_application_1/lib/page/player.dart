@@ -222,15 +222,18 @@
     ),
   ), // connect the textfield to the playertwoController
 
+// Parv, button for going to the game screen
   FilledButton(
     onPressed: () {
+
+      //Parv, this if statement is here to make sure that theres something in both of the text boxes rather then being empty
       if (playerOneController.text.isEmpty || playerTwoController.text.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Please enter both player names!")),
         );
         return;
       }
-
+      // Parv, navigates to the game screen and gives the class the names it gets to work with
     Navigator.push(
       context,
       MaterialPageRoute(

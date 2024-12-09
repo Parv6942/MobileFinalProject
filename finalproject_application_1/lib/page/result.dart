@@ -7,7 +7,7 @@ class ResultScreen extends StatelessWidget {
   final String player2Name;
   final String winner;
  
-
+//Parv, player names and winner variables above, constructor below grabs it from game.dart
   ResultScreen({
     required this.player1Name,
     required this.player2Name,
@@ -26,6 +26,7 @@ class ResultScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
+              //winner message here
               winner,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
