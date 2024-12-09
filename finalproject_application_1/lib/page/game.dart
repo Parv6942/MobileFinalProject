@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'result.dart';
+import 'globals.dart';
 
 class GameScreen extends StatefulWidget {
   final String player1Name;
   final String player2Name;
-  final List<Map<String, String>> gameResults;
 
-  GameScreen({required this.player1Name, required this.player2Name, required this.gameResults});
+  GameScreen({required this.player1Name, required this.player2Name});
 
   @override
   _GameScreenState createState() => _GameScreenState();
@@ -33,7 +34,6 @@ class _GameScreenState extends State<GameScreen> {
           player1Name: widget.player1Name,
           player2Name: widget.player2Name,
           winner: winner,
-          gameResults: widget.gameResults,
         ),
       ),
     );
