@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:finalproject_application_1/page/leaderboard.dart';
 
-
+// Final Mobile Project 
+//By: Humza, Parv, Will
+// Created on 12/08/24
 void main() {
   runApp(MainApp());
 }
