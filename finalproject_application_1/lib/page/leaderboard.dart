@@ -12,15 +12,22 @@ class Leaderboard extends StatelessWidget {
         title: Text("Leaderboard"),
         backgroundColor: Colors.blueAccent,
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              "Game Results",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      body: gameResults.isEmpty
+          ? Center(
+              child: Text(
+                "No games played yet.",
+                style: TextStyle(fontSize: 18),
+              ),
+            )
+          : Column(
+            children: [
+            Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                "Game Results",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
             ),
-          ),
           Expanded(
             child: ListView.builder(
               itemCount: gameResults.length,

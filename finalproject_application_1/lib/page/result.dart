@@ -43,7 +43,7 @@ class ResultScreen extends StatelessWidget {
                   'player2': player2Name,
                   'winner': winner,
                 });
-
+                
                 Navigator.push(
                   context,
                   MaterialPageRoute(
