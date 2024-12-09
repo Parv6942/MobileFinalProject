@@ -25,6 +25,11 @@ import 'package:flutter/services.dart';
 // contains Player class that defines the player widget as a statefulwidget,
 //  it is required to maintain the state when player widget is changing 
 class Player extends StatefulWidget {
+
+  final List<Map<String, String>> gameResults; // Add game results list
+
+  Player({required this.gameResults});
+  
 @override 
 _PlayerState createState() => _PlayerState();
 
@@ -226,6 +231,7 @@ FilledButton(
        builder: (context) => GameScreen(
           player1Name: playerOneController.text,
           player2Name: playerTwoController.text,
+          gameResults: widget.gameResults,
         ),
       ),
     );

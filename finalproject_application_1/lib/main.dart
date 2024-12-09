@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget{
             FilledButton(onPressed: (){
              Navigator.push(context,
              MaterialPageRoute(builder: (context){
-              return Player();
+              return Player(gameResults: []);
              })
              );
             }, child: Text("Start")
@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget{
             FilledButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Leaderboard(); // Navigate to the leaderboard
+                  return Leaderboard(gameResults: []); // Navigate to the leaderboard
                 }));
                },
                   child: Text("Leaderboard"),

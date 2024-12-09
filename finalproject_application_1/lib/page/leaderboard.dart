@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Leaderboard extends StatelessWidget {
-  // Static data representing game results
-  final List<Map<String, String>> gameResults = [
-    {'player1': 'Bob1', 'player2': 'Bob2', 'winner': 'Bob1'},
-  ];
+  final List<Map<String, String>> gameResults;
+
+  Leaderboard({required this.gameResults});
 
   @override
   Widget build(BuildContext context) {
