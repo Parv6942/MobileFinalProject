@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'result.dart';
-import 'globals.dart';
 
 class GameScreen extends StatefulWidget {
   final String player1Name;
